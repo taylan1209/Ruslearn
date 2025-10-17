@@ -1,0 +1,32 @@
+{
+  "name": "ruslearn",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "seed": "tsx scripts/seedFirestore.ts"
+  },
+  "dependencies": {
+    "firebase": "^10.7.2",
+    "next": "^14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.73",
+    "@types/react-dom": "^18.2.25",
+    "autoprefixer": "^10.4.17",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.3",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.3",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.3"
+  }
+}

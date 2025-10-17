@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  max-width: 100%;
+}
+
+body {
+  background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 40%);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.glass-panel {
+  @apply rounded-2xl border border-white/60 bg-white/80 backdrop-blur-lg shadow-soft;
+}
+
+.card-gradient {
+  background: linear-gradient(135deg, #6c63ff 0%, #8f88ff 50%, #5146d8 100%);
+}
+
+.card-gradient-soft {
+  background: linear-gradient(135deg, #f3f4ff 0%, #ffffff 100%);
+}
