@@ -23,13 +23,13 @@ export const FlashcardPreview = ({ flashcard }: FlashcardPreviewProps) => {
   const difficultyLabel = useMemo(() => {
     switch (flashcard.difficulty) {
       case "easy":
-        return "Kolay";
+        return "Easy";
       case "medium":
-        return "Orta";
+        return "Medium";
       case "hard":
-        return "Zor";
+        return "Hard";
       default:
-        return "Bilinmiyor";
+        return "Unknown";
     }
   }, [flashcard.difficulty]);
 
@@ -42,10 +42,10 @@ export const FlashcardPreview = ({ flashcard }: FlashcardPreviewProps) => {
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-lg font-semibold text-slate-800">
-              Animasyonlu Flashcards
+              Animated Flashcards
             </h2>
             <p className="text-sm text-slate-500">
-              Kelime kartları ile etkileşimli öğrenme
+              Learn vocabulary through interactive cards.
             </p>
           </div>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-wide text-primary">
@@ -57,14 +57,14 @@ export const FlashcardPreview = ({ flashcard }: FlashcardPreviewProps) => {
             onClick={() => setIsFlipped((state) => !state)}
             className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:border-primary/40 hover:text-primary"
           >
-            Kartı çevir
+            Flip card
           </button>
           <button
             onClick={speakTerm}
             className="flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-dark"
           >
             <span className="h-2 w-2 rounded-full bg-white" />
-            Seslendir
+            Play audio
           </button>
         </div>
         <div className="relative h-64 w-full perspective-1000">
@@ -75,7 +75,7 @@ export const FlashcardPreview = ({ flashcard }: FlashcardPreviewProps) => {
           >
             <figure className="card-gradient absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-3xl p-6 text-center text-white shadow-card [backface-visibility:hidden]">
               <p className="text-xs uppercase tracking-[0.35em] text-white/70">
-                Ön Yüz
+                Front
               </p>
               <p className="text-4xl font-semibold">{flashcard.term}</p>
               {flashcard.stressMark ? (
@@ -88,7 +88,7 @@ export const FlashcardPreview = ({ flashcard }: FlashcardPreviewProps) => {
             <figure className="card-gradient-soft absolute inset-0 flex flex-col justify-between rounded-3xl p-6 text-slate-800 shadow-card [backface-visibility:hidden] [transform:rotateY(180deg)]">
               <header className="space-y-2">
                 <p className="text-xs uppercase tracking-[0.35em] text-slate-400">
-                  Arka Yüz
+                  Back
                 </p>
                 <div className="text-2xl font-semibold text-slate-800">
                   {flashcard.translations.tr}
@@ -98,7 +98,7 @@ export const FlashcardPreview = ({ flashcard }: FlashcardPreviewProps) => {
                 </div>
               </header>
               <div className="space-y-2 rounded-2xl bg-white p-4 text-sm text-slate-600 shadow-inner">
-                <p className="font-medium text-slate-700">Örnek</p>
+                <p className="font-medium text-slate-700">Example</p>
                 <p className="text-slate-900">{flashcard.example.sentence}</p>
                 <div className="grid gap-1 text-xs text-slate-500">
                   <span>TR: {flashcard.example.translationTr}</span>
@@ -120,40 +120,40 @@ export const FlashcardPreview = ({ flashcard }: FlashcardPreviewProps) => {
         </div>
         <div className="flex flex-wrap gap-3">
           <button className="rounded-full bg-[#ff6b6b] px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#f25858]">
-            Bilmiyorum
+            I Don&apos;t Know
           </button>
           <button className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#00b49c]">
-            Biliyorum
+            I Know
           </button>
           <button className="rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-600 transition hover:border-primary/40 hover:text-primary">
-            Başla
+            Start
           </button>
         </div>
       </div>
       <div className="flex w-full flex-col justify-between gap-4 rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-soft lg:max-w-sm">
         <div className="space-y-2">
           <h3 className="text-base font-semibold text-slate-800">
-            Öğrenme İlerleyişi
+            Learning Progress
           </h3>
           <p className="text-sm text-slate-500">
-            Aralıklı tekrar algoritması sizin için en uygun sırayı belirler.
+            Our spaced-repetition engine schedules the optimal review order for you.
           </p>
         </div>
         <div className="space-y-3 rounded-2xl border border-primary/10 bg-primary/5 p-4">
           <div className="flex items-center justify-between text-sm text-slate-500">
-            <span>Son tekrar</span>
-            <span>2 saat önce</span>
+            <span>Last review</span>
+            <span>2h ago</span>
           </div>
           <div className="flex items-center justify-between text-sm text-slate-500">
-            <span>Sonuç</span>
+            <span>Result</span>
             <span className="rounded-full bg-green-500/10 px-3 py-1 text-xs font-semibold text-green-600">
-              %100 doğru
+              100% correct
             </span>
           </div>
           <div className="space-y-1">
             <div className="flex items-center justify-between text-xs uppercase tracking-wide text-slate-400">
-              <span>Sonraki tekrar</span>
-              <span>6 saat içinde</span>
+              <span>Next review</span>
+              <span>in 6h</span>
             </div>
             <div className="h-1.5 overflow-hidden rounded-full bg-slate-100">
               <div className="h-full w-2/3 rounded-full bg-primary" />
@@ -162,12 +162,12 @@ export const FlashcardPreview = ({ flashcard }: FlashcardPreviewProps) => {
         </div>
         <div className="space-y-2">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-            Adaptive Modlar
+            Adaptive Modes
           </p>
           <ul className="space-y-2 text-sm text-slate-600">
-            <li>• Dinle ve yaz moduna geç</li>
-            <li>• Konuşma pratikleri için mikrofonu aç</li>
-            <li>• Kelime aileleri ve öneklerin farklarını incele</li>
+            <li>• Switch to listen-and-type drills</li>
+            <li>• Activate microphone for speaking reps</li>
+            <li>• Explore word families and prefix nuances</li>
           </ul>
         </div>
       </div>

@@ -53,7 +53,7 @@ export const TopNav = () => {
         </nav>
         <div className="flex items-center gap-3">
           <button className="rounded-full border border-slate-200/80 bg-white px-4 py-2 text-sm font-medium text-slate-600 hover:border-primary/30 hover:text-primary">
-            Geri Bildirim
+            Feedback
           </button>
           <div className="h-10 w-10 rounded-full border border-primary/30 bg-gradient-to-br from-primary via-primary/80 to-primary/60 shadow-card" />
         </div>

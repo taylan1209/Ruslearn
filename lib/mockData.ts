@@ -6,31 +6,31 @@ export const mockDashboardData: DashboardData = {
     term: "спасибо",
     stressMark: "спаси́бо",
     translations: {
-      tr: "teşekkür ederim",
+      tr: "thank you (Turkish translation)",
       en: "thank you"
     },
     example: {
       sentence: "Спасибо за помощь!",
-      translationTr: "Yardım için teşekkür ederim!",
+      translationTr: "Turkish translation: thanks for the help!",
       translationEn: "Thanks for the help!"
     },
     hints: [
-      "Vurgu ikinci hecede.",
-      "Günlük ifadelerde sık kullanılır.",
-      "Resmi ve samimi bağlamlarda geçerlidir."
+      "Stress falls on the second syllable.",
+      "Used constantly in everyday conversations.",
+      "Appropriate in both formal and casual contexts."
     ],
     difficulty: "easy"
   },
   quizQuestion: {
     id: "greeting",
-    prompt: "\"Merhaba\" Rusça'da nasıl söylenir?",
+    prompt: "How do you say “hello” in Russian?",
     type: "comprehension",
-    skillFocus: "Selamlaşma & temel konuşma",
+    skillFocus: "Greetings & basic conversation",
     choices: [
       {
         id: "privet",
         label: "привет",
-        explanationTr: "Doğru cevap: günlük konuşmalarda merhaba demek için.",
+        explanationTr: "Turkish explanation: the correct everyday greeting.",
         explanationEn: "Correct: informal hello / hi.",
         example: "Привет, как дела?",
         correct: true
@@ -38,7 +38,8 @@ export const mockDashboardData: DashboardData = {
       {
         id: "spasibo",
         label: "спасибо",
-        explanationTr: "Bu teşekkür ederim demek, selamlama değil.",
+        explanationTr:
+          "Turkish explanation: means thank you, not a greeting.",
         explanationEn: "Means thank you, not a greeting.",
         example: "Спасибо за подарок.",
         correct: false
@@ -46,7 +47,8 @@ export const mockDashboardData: DashboardData = {
       {
         id: "pozhaluysta",
         label: "пожалуйста",
-        explanationTr: "Rica ederim / lütfen; selamlama için kullanılmaz.",
+        explanationTr:
+          "Turkish explanation: translates to please / you're welcome.",
         explanationEn: "Means please / you're welcome.",
         example: "Пожалуйста, заходи.",
         correct: false
@@ -54,7 +56,8 @@ export const mockDashboardData: DashboardData = {
       {
         id: "dosvidaniya",
         label: "до свидания",
-        explanationTr: "Bu görüşürüz / hoşça kal demektir.",
+        explanationTr:
+          "Turkish explanation: corresponds to goodbye or see you later.",
         explanationEn: "Goodbye or see you later.",
         example: "До свидания, до завтра.",
         correct: false
@@ -65,52 +68,52 @@ export const mockDashboardData: DashboardData = {
     {
       id: "wordsLearned",
       value: "1,247",
-      label: "Öğrenilen Kelime",
-      delta: "+32 bugün",
+      label: "Words Learned",
+      delta: "+32 today",
       status: "up",
-      hint: "Dünya ortalamasının %18 üzerinde."
+      hint: "18% above the global average."
     },
     {
       id: "accuracy",
       value: "89%",
-      label: "Doğruluk Oranı",
-      delta: "+4% bu hafta",
+      label: "Accuracy Rate",
+      delta: "+4% this week",
       status: "up"
     },
     {
       id: "dailyStreak",
       value: "23",
-      label: "Günlük Seri",
-      delta: "Son seri: 18 gün",
+      label: "Day Streak",
+      delta: "Previous streak: 18 days",
       status: "stable"
     },
     {
       id: "focusTime",
-      value: "45dk",
-      label: "Bugünkü Çalışma",
-      delta: "+15dk hedefin üzerinde",
+      value: "45 min",
+      label: "Focus Time Today",
+      delta: "+15 min over goal",
       status: "up"
     }
   ],
   activities: [
     {
       id: "daily-set",
-      description: "Günlük kelimeler seti tamamlandı",
-      timestamp: "32 dakika önce",
+      description: "Daily word set completed",
+      timestamp: "32 minutes ago",
       xp: 50,
       type: "flashcard"
     },
     {
       id: "content-import",
-      description: "Yeni içerik eklendi: \"Seyahat Terimleri\"",
-      timestamp: "1 saat önce",
+      description: "New content added: “Travel Expressions”",
+      timestamp: "1 hour ago",
       xp: 20,
       type: "content"
     },
     {
       id: "quiz",
-      description: "Quiz rekoru: %95 doğruluk",
-      timestamp: "3 saat önce",
+      description: "Quiz milestone: 95% accuracy",
+      timestamp: "3 hours ago",
       xp: 100,
       type: "quiz"
     }

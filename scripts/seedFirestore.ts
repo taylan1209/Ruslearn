@@ -21,7 +21,7 @@ const requiredEnvVars = [
 requiredEnvVars.forEach((envKey) => {
   if (!process.env[envKey]) {
     throw new Error(
-      `Ortam değişkeni eksik: ${envKey}. Lütfen .env.local dosyanızı kontrol edin.`
+      `Missing environment variable: ${envKey}. Please verify your .env.local file.`
     );
   }
 });
@@ -47,125 +47,130 @@ const seedData: CollectionSeed = {
       id: "spasibo",
       term: "спасибо",
       stressMark: "спаси́бо",
-      translations: { tr: "teşekkür ederim", en: "thank you" },
+      translations: { tr: "thank you (Turkish translation)", en: "thank you" },
       example: {
         sentence: "Спасибо за помощь!",
-        translationTr: "Yardım için teşekkür ederim!",
+        translationTr: "Turkish translation: thanks for the help!",
         translationEn: "Thanks for the help!"
       },
       hints: [
-        "Vurgu ikinci hecede.",
-        "Günlük ifadelerde sık kullanılır.",
-        "Resmi ve samimi bağlamlarda geçerlidir."
+        "Stress falls on the second syllable.",
+        "A core phrase in daily conversation.",
+        "Fits both formal and informal contexts."
       ],
       difficulty: "easy",
-      tags: ["selamlaşma", "gündelik"],
+      tags: ["greetings", "everyday"],
       createdAt: nowIso()
     },
     {
       id: "privet",
       term: "привет",
       stressMark: "приве́т",
-      translations: { tr: "merhaba", en: "hello" },
+      translations: { tr: "hello (Turkish translation)", en: "hello" },
       example: {
         sentence: "Привет, как дела?",
-        translationTr: "Merhaba, nasılsın?",
+        translationTr: "Turkish translation: hello, how are you?",
         translationEn: "Hi, how are you?"
       },
       hints: [
-        "Samimi selamlaşma.",
-        "Yabancılara karşı resmi değil.",
-        "Resmi versiyon: «Здравствуйте»."
+        "Casual greeting used with friends.",
+        "Too informal for strangers or formal settings.",
+        "Formal variant: «Здравствуйте»."
       ],
       difficulty: "easy",
-      tags: ["selamlaşma", "gündelik"],
+      tags: ["greetings", "everyday"],
       createdAt: nowIso()
     },
     {
       id: "pozhaluysta",
       term: "пожалуйста",
       stressMark: "пожалу́йста",
-      translations: { tr: "lütfen / rica ederim", en: "please / you're welcome" },
+      translations: {
+        tr: "please / you're welcome (Turkish translation)",
+        en: "please / you're welcome"
+      },
       example: {
         sentence: "Пожалуйста, приходите завтра.",
-        translationTr: "Lütfen yarın gelin.",
+        translationTr: "Turkish translation: please come tomorrow.",
         translationEn: "Please come tomorrow."
       },
       hints: [
-        "Hem lütfen hem de rica ederim anlamında.",
-        "Çok kiplik bağlamında kullanılır.",
-        "Dinleme alıştırmaları için uygun."
+        "Carries both request and response meanings.",
+        "Useful for politeness drills and dialogs.",
+        "Pairs well with listening dictations."
       ],
       difficulty: "medium",
-      tags: ["nazik ifadeler"],
+      tags: ["politeness"],
       createdAt: nowIso()
     },
     {
       id: "do-svidaniya",
       term: "до свидания",
       stressMark: "до свида́ния",
-      translations: { tr: "hoşça kalın", en: "goodbye" },
+      translations: { tr: "goodbye (Turkish translation)", en: "goodbye" },
       example: {
         sentence: "До свидания, до завтра!",
-        translationTr: "Hoşça kalın, yarın görüşürüz!",
+        translationTr: "Turkish translation: goodbye, see you tomorrow!",
         translationEn: "Goodbye, see you tomorrow!"
       },
       hints: [
-        "Resmi ve samimi bağlamlarda uygun.",
-        "Kelime kelime çeviri: 'görüşene kadar'."
+        "Appropriate across formal and informal contexts.",
+        "Literal meaning: “until we meet again”."
       ],
       difficulty: "easy",
-      tags: ["selamlaşma", "günlük"],
+      tags: ["greetings", "everyday"],
       createdAt: nowIso()
     },
     {
       id: "vstrecha",
       term: "встреча",
       stressMark: "встре́ча",
-      translations: { tr: "toplantı", en: "meeting" },
+      translations: { tr: "meeting (Turkish translation)", en: "meeting" },
       example: {
         sentence: "У нас сегодня важная встреча с партнёрами.",
-        translationTr: "Bugün partnerlerle önemli bir toplantımız var.",
+        translationTr:
+          "Turkish translation: we have an important meeting with partners today.",
         translationEn: "We have an important meeting with partners today."
       },
       hints: [
-        "İş ve akademik bağlamlarda sık geçer.",
-        "Fiil hâli: «встречаться» - buluşmak."
+        "Common in professional and academic contexts.",
+        "Verb form: «встречаться» — to meet."
       ],
       difficulty: "medium",
-      tags: ["iş", "profesyonel"],
+      tags: ["business", "professional"],
       createdAt: nowIso()
     },
     {
       id: "uspekh",
       term: "успех",
       stressMark: "успе́х",
-      translations: { tr: "başarı", en: "success" },
+      translations: { tr: "success (Turkish translation)", en: "success" },
       example: {
         sentence: "Труд и упорство ведут к успеху.",
-        translationTr: "Emek ve azim başarıya götürür.",
+        translationTr:
+          "Turkish translation: effort and perseverance lead to success.",
         translationEn: "Work and perseverance lead to success."
       },
       hints: [
-        "İsim, tekil.",
-        "Sıklıkla «добиться успеха» kalıbında kullanılır."
+        "Noun, singular.",
+        "Often appears in the phrase «добиться успеха» — to achieve success."
       ],
       difficulty: "hard",
-      tags: ["soyut", "motivasyon"],
+      tags: ["abstract", "motivation"],
       createdAt: nowIso()
     }
   ],
   quizQuestions: [
     {
       id: "quiz-greeting-01",
-      prompt: "\"Merhaba\" Rusça'da nasıl söylenir?",
+      prompt: "How do you say “hello” in Russian?",
       type: "comprehension",
-      skillFocus: "Selamlaşma & temel konuşma",
+      skillFocus: "Greetings & basic conversation",
       choices: [
         {
           id: "privet",
           label: "привет",
-          explanationTr: "Doğru cevap: günlük konuşmalarda merhaba demek için.",
+          explanationTr: "Turkish explanation: correct everyday greeting.",
           explanationEn: "Correct option: informal hello.",
           example: "Привет, как дела?",
           correct: true
@@ -173,7 +178,8 @@ const seedData: CollectionSeed = {
         {
           id: "spasibo",
           label: "спасибо",
-          explanationTr: "Bu teşekkür ederim demek, selamlama değil.",
+          explanationTr:
+            "Turkish explanation: translates to thank you, not hello.",
           explanationEn: "Means thank you, not a greeting.",
           example: "Спасибо за подарок.",
           correct: false
@@ -181,7 +187,8 @@ const seedData: CollectionSeed = {
         {
           id: "pozhaluysta",
           label: "пожалуйста",
-          explanationTr: "Rica ederim / lütfen; selamlama için kullanılmaz.",
+          explanationTr:
+            "Turkish explanation: means please / you're welcome.",
           explanationEn: "Means please / you're welcome.",
           example: "Пожалуйста, заходи.",
           correct: false
@@ -189,7 +196,8 @@ const seedData: CollectionSeed = {
         {
           id: "do-svidaniya",
           label: "до свидания",
-          explanationTr: "Bu görüşürüz / hoşça kal demektir.",
+          explanationTr:
+            "Turkish explanation: corresponds to goodbye or see you later.",
           explanationEn: "Goodbye or see you later.",
           example: "До свидания, до завтра.",
           correct: false
@@ -199,14 +207,15 @@ const seedData: CollectionSeed = {
     },
     {
       id: "quiz-grammar-01",
-      prompt: "Aşağıdaki cümlede boşluğu doğru doldurun: «Мы ___ в Москве вчера».",
+      prompt: "Fill in the blank: «Мы ___ в Москве вчера».",
       type: "grammar",
-      skillFocus: "Geçmiş zaman fiil çekimi",
+      skillFocus: "Past tense verb conjugation",
       choices: [
         {
           id: "byli",
           label: "были",
-          explanationTr: "Doğru: Çoğul özne için geçmiş zaman «быть» fiilinin şekli.",
+          explanationTr:
+            "Turkish explanation: plural past tense of the verb «быть».",
           explanationEn: "Correct plural past tense of «быть».",
           example: "Мы были в театре.",
           correct: true
@@ -214,7 +223,8 @@ const seedData: CollectionSeed = {
         {
           id: "byl",
           label: "был",
-          explanationTr: "Erkek tekil özneler için kullanılır.",
+          explanationTr:
+            "Turkish explanation: used for singular masculine subjects.",
           explanationEn: "Used for singular masculine subjects.",
           example: "Он был в Москве.",
           correct: false
@@ -222,7 +232,8 @@ const seedData: CollectionSeed = {
         {
           id: "byla",
           label: "была",
-          explanationTr: "Dişil tekil özneler için geçerlidir.",
+          explanationTr:
+            "Turkish explanation: used for singular feminine subjects.",
           explanationEn: "Used for singular feminine subjects.",
           example: "Она была в Москве.",
           correct: false
@@ -230,7 +241,8 @@ const seedData: CollectionSeed = {
         {
           id: "budem",
           label: "будем",
-          explanationTr: "Gelecek zaman çekimi, cümleye uymaz.",
+          explanationTr:
+            "Turkish explanation: future tense form, does not fit the sentence.",
           explanationEn: "Future tense form; doesn't match the sentence.",
           example: "Мы будем в Москве завтра.",
           correct: false
@@ -240,39 +252,43 @@ const seedData: CollectionSeed = {
     },
     {
       id: "quiz-listening-01",
-      prompt: "Dinleme: «Пожалуйста, повторите ещё раз.» cümlesi ne anlama gelir?",
+      prompt:
+        "Listening: what does «Пожалуйста, повторите ещё раз.» mean in English?",
       type: "listening",
-      skillFocus: "Dinlediğini anlama",
+      skillFocus: "Listening comprehension",
       audioUrl: "https://storage.googleapis.com/ruslearn-demo/audio/repeat-please.mp3",
       choices: [
         {
           id: "repeat",
-          label: "Lütfen tekrar eder misiniz?",
-          explanationTr: "Doğru çeviri.",
+          label: "Please repeat that.",
+          explanationTr: "Turkish explanation: correct translation.",
           explanationEn: "Correct translation.",
           example: "Пожалуйста, повторите ещё раз, я не услышал.",
           correct: true
         },
         {
           id: "wait",
-          label: "Lütfen bekleyin.",
-          explanationTr: "Fiil «подождать» olmalıydı.",
+          label: "Please wait.",
+          explanationTr:
+            "Turkish explanation: would require the verb «подождать».",
           explanationEn: "Would require the verb «подождать».",
           example: "Пожалуйста, подождите.",
           correct: false
         },
         {
           id: "speak-louder",
-          label: "Daha yüksek sesle konuşur musunuz?",
-          explanationTr: "Bu anlam için «Говорите громче» gerekir.",
+          label: "Could you speak louder?",
+          explanationTr:
+            "Turkish explanation: needs the phrase «Говорите громче».",
           explanationEn: "Needs «Говорите громче».",
           example: "Говорите, пожалуйста, громче.",
           correct: false
         },
         {
           id: "goodbye",
-          label: "Hoşça kalın.",
-          explanationTr: "Bu «до свидания» anlamına gelir.",
+          label: "Goodbye.",
+          explanationTr:
+            "Turkish explanation: corresponds to «до свидания».",
           explanationEn: "Means «до свидания».",
           example: "До свидания, до встречи.",
           correct: false
@@ -282,14 +298,14 @@ const seedData: CollectionSeed = {
     },
     {
       id: "quiz-production-01",
-      prompt: "\"Teşekkür ederim\" ifadesinin Rusça karşılığını seçin.",
+      prompt: "Choose the Russian equivalent of “thank you”.",
       type: "production",
-      skillFocus: "Aktif kelime kullanımı",
+      skillFocus: "Active vocabulary recall",
       choices: [
         {
           id: "spasibo",
           label: "спасибо",
-          explanationTr: "Doğru karşılık.",
+          explanationTr: "Turkish explanation: the correct translation.",
           explanationEn: "Correct translation.",
           example: "Спасибо, это было вкусно.",
           correct: true
@@ -297,7 +313,8 @@ const seedData: CollectionSeed = {
         {
           id: "pozhaluysta",
           label: "пожалуйста",
-          explanationTr: "Bu rica ederim / lütfen demek.",
+          explanationTr:
+            "Turkish explanation: translates to please / you're welcome.",
           explanationEn: "Means please / you're welcome.",
           example: "Пожалуйста, не опаздывай.",
           correct: false
@@ -305,7 +322,7 @@ const seedData: CollectionSeed = {
         {
           id: "zdravstvuyte",
           label: "здравствуйте",
-          explanationTr: "Resmi selamlaşma.",
+          explanationTr: "Turkish explanation: formal greeting.",
           explanationEn: "Formal greeting.",
           example: "Здравствуйте, меня зовут Анна.",
           correct: false
@@ -313,7 +330,7 @@ const seedData: CollectionSeed = {
         {
           id: "do-svidaniya",
           label: "до свидания",
-          explanationTr: "Hoşça kalın anlamına gelir.",
+          explanationTr: "Turkish explanation: means goodbye.",
           explanationEn: "Means goodbye.",
           example: "До свидания, до встречи.",
           correct: false
@@ -326,33 +343,33 @@ const seedData: CollectionSeed = {
     {
       id: "wordsLearned",
       value: "1,247",
-      label: "Öğrenilen Kelime",
-      delta: "+32 bugün",
+      label: "Words Learned",
+      delta: "+32 today",
       status: "up",
-      hint: "Dünya ortalamasının %18 üzerinde.",
+      hint: "18% above the global average.",
       createdAt: nowIso()
     },
     {
       id: "accuracy",
       value: "89%",
-      label: "Doğruluk Oranı",
-      delta: "+4% bu hafta",
+      label: "Accuracy Rate",
+      delta: "+4% this week",
       status: "up",
       createdAt: nowIso()
     },
     {
       id: "dailyStreak",
       value: "23",
-      label: "Günlük Seri",
-      delta: "Son seri: 18 gün",
+      label: "Day Streak",
+      delta: "Previous streak: 18 days",
       status: "stable",
       createdAt: nowIso()
     },
     {
       id: "focusTime",
-      value: "45dk",
-      label: "Bugünkü Çalışma",
-      delta: "+15dk hedefin üzerinde",
+      value: "45 min",
+      label: "Focus Time Today",
+      delta: "+15 min above target",
       status: "up",
       createdAt: nowIso()
     }
@@ -360,40 +377,40 @@ const seedData: CollectionSeed = {
   activities: [
     {
       id: "activity-daily-set",
-      description: "Günlük kelimeler seti tamamlandı",
-      timestamp: "32 dakika önce",
+      description: "Daily vocabulary set completed",
+      timestamp: "32 minutes ago",
       xp: 50,
       type: "flashcard",
       createdAt: nowIso()
     },
     {
       id: "activity-content-import",
-      description: "Yeni içerik eklendi: \"Seyahat Terimleri\"",
-      timestamp: "1 saat önce",
+      description: "New content added: “Travel Expressions”",
+      timestamp: "1 hour ago",
       xp: 20,
       type: "content",
       createdAt: nowIso()
     },
     {
       id: "activity-quiz-record",
-      description: "Quiz rekoru: %95 doğruluk",
-      timestamp: "3 saat önce",
+      description: "Quiz record: 95% accuracy",
+      timestamp: "3 hours ago",
       xp: 100,
       type: "quiz",
       createdAt: nowIso()
     },
     {
       id: "activity-speaking",
-      description: "Konuşma pratiği: 10 cümle tekrar edildi",
-      timestamp: "6 saat önce",
+      description: "Speaking drill: repeated 10 sentences",
+      timestamp: "6 hours ago",
       xp: 35,
       type: "practice",
       createdAt: nowIso()
     },
     {
       id: "activity-listening",
-      description: "Dinleme-yazma alıştırması tamamlandı",
-      timestamp: "Dün",
+      description: "Listening dictation completed",
+      timestamp: "Yesterday",
       xp: 40,
       type: "practice",
       createdAt: nowIso()
@@ -405,10 +422,10 @@ const seedData: CollectionSeed = {
       sentence: "___, как тебя зовут?",
       answer: "Привет",
       translations: {
-        tr: "Merhaba, adın ne?",
+        tr: "Turkish translation: hello, what's your name?",
         en: "Hi, what's your name?"
       },
-      hints: ["Selamlaşmadan sonra kullanılan kalıp"],
+      hints: ["Set phrase that follows a casual greeting."],
       createdAt: nowIso()
     },
     {
@@ -416,22 +433,22 @@ const seedData: CollectionSeed = {
       sentence: "Большое спасибо за ___ помощь.",
       answer: "вашу",
       translations: {
-        tr: "Yardımınız için çok teşekkürler.",
+        tr: "Turkish translation: thank you very much for your help.",
         en: "Thank you very much for your help."
       },
-      hints: ["Saygılı hitap eki kullanılır"],
+      hints: ["Requires the polite possessive form."],
       createdAt: nowIso()
     }
   ],
   matchingSets: [
     {
       id: "matching-greetings",
-      title: "Selamlaşmalar",
+      title: "Greetings",
       items: [
-        { ru: "привет", tr: "merhaba" },
-        { ru: "здравствуйте", tr: "merhaba (resmi)" },
-        { ru: "до свидания", tr: "hoşça kalın" },
-        { ru: "спасибо", tr: "teşekkür ederim" }
+        { ru: "привет", tr: "hello (Turkish translation)" },
+        { ru: "здравствуйте", tr: "hello (formal, Turkish translation)" },
+        { ru: "до свидания", tr: "goodbye (Turkish translation)" },
+        { ru: "спасибо", tr: "thank you (Turkish translation)" }
       ],
       createdAt: nowIso()
     }
@@ -439,7 +456,7 @@ const seedData: CollectionSeed = {
   listeningDrills: [
     {
       id: "listening-repetition-1",
-      prompt: "Seslendirmeyi dinleyip cümleyi Kiril alfabesiyle yazın.",
+      prompt: "Listen to the audio and transcribe the sentence in Cyrillic.",
       audioUrl: "https://storage.googleapis.com/ruslearn-demo/audio/privet.mp3",
       answer: "Привет! Как дела?",
       createdAt: nowIso()
@@ -449,15 +466,15 @@ const seedData: CollectionSeed = {
     {
       id: "speaking-001",
       prompt:
-        "Merhaba deyip kendinizi tanıtın. İpucu: «Привет! Меня зовут ...»",
-      focus: "Selamlaşma ve öz tanıtım",
+        "Greet someone and introduce yourself. Hint: «Привет! Меня зовут ...»",
+      focus: "Greetings and self-introduction",
       createdAt: nowIso()
     },
     {
       id: "speaking-002",
       prompt:
-        "Birinden nazikçe tekrar etmesini isteyin. İpucu: «Пожалуйста, повторите ещё раз.»",
-      focus: "Kibar istekler",
+        "Politely ask someone to repeat. Hint: «Пожалуйста, повторите ещё раз.»",
+      focus: "Polite requests",
       createdAt: nowIso()
     }
   ],
@@ -468,37 +485,37 @@ const seedData: CollectionSeed = {
       derivatives: [
         {
           word: "сделать",
-          tr: "yapmak (tamamlamak)",
-          en: "to do/complete"
+          tr: "to do / to complete (Turkish translation)",
+          en: "to do / complete"
         },
         {
           word: "поделать",
-          tr: "bir süre yapmak",
+          tr: "to do for a while (Turkish translation)",
           en: "to do for a while"
         },
         {
           word: "переделать",
-          tr: "tekrar yapmak / yeniden yapmak",
-          en: "redo"
+          tr: "to redo (Turkish translation)",
+          en: "to redo"
         }
       ],
-      notes: "Öneklerle anlam değişimi üzerine mini modül.",
+      notes: "Mini module on how prefixes shift the meaning of «делать».",
       createdAt: nowIso()
     }
   ],
   frequencyDecks: [
     {
       id: "frequency-top25",
-      title: "İlk 25 yüksek frekanslı kelime",
-      description: "Günlük diyaloglarda en sık karşılaşılan kelimeler.",
+      title: "Top 25 High-Frequency Words",
+      description: "Core vocabulary that appears most often in daily dialogs.",
       difficulty: "easy",
       flashcardIds: ["spasibo", "privet", "pozhaluysta", "do-svidaniya"],
       createdAt: nowIso()
     },
     {
       id: "theme-travel",
-      title: "Seyahat Teması",
-      description: "Seyahat ederken işinize yarayacak Rusça kelime ve kalıplar.",
+      title: "Travel Theme",
+      description: "Russian words and phrases that simplify your trips.",
       difficulty: "medium",
       flashcardIds: ["vstrecha", "spasibo", "pozhaluysta"],
       createdAt: nowIso()
@@ -511,7 +528,7 @@ const seedFirestore = async () => {
 
   for (const name of collectionNames) {
     const items = seedData[name];
-    console.log(`→ ${name} koleksiyonuna ${items.length} kayıt yazılıyor...`);
+    console.log(`→ Writing ${items.length} records to the ${name} collection...`);
 
     const batch = writeBatch(db);
     const colRef = collection(db, name);
@@ -520,7 +537,7 @@ const seedFirestore = async () => {
       const { id, ...rest } = item;
       if (typeof id !== "string" || !id.trim()) {
         throw new Error(
-          `${name} koleksiyonundaki öğeler 'id' alanına sahip olmalıdır.`
+          `Items in the ${name} collection must include a non-empty 'id' field.`
         );
       }
       const docRef = doc(colRef, id);
@@ -533,10 +550,10 @@ const seedFirestore = async () => {
 
 seedFirestore()
   .then(() => {
-    console.log("✅ Firestore örnek verileri başarıyla yazıldı.");
+    console.log("✅ Firestore seed data written successfully.");
     process.exit(0);
   })
   .catch((error) => {
-    console.error("❌ Firestore veri yazma sırasında hata oluştu:", error);
+    console.error("❌ Firestore seeding failed:", error);
     process.exit(1);
   });
