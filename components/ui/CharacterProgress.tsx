@@ -14,16 +14,16 @@ export const CharacterProgress = ({
   progress
 }: CharacterProgressProps) => {
   const statusLabel = useMemo(() => {
-    if (progress >= 100) return "Limit doldu";
-    if (progress > 80) return "Son birkaç karakter";
-    return "Hazır";
+    if (progress >= 100) return "Limit reached";
+    if (progress > 80) return "Almost there";
+    return "Ready";
   }, [progress]);
 
   return (
     <div className="flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-medium text-slate-600">
       <div className="flex-1">
         <div className="flex items-center justify-between pb-1 text-[11px] uppercase tracking-wide">
-          <span>Karakter</span>
+          <span>Characters</span>
           <span>
             {value}/{limit}
           </span>

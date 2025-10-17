@@ -19,9 +19,11 @@ export const QuizPreview = ({ question }: QuizPreviewProps) => {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h2 className="text-lg font-semibold text-slate-800">
-            Açıklamalı 4 Şıklı Quiz
+            Explained Multiple-Choice Quiz
           </h2>
-          <p className="text-sm text-slate-500">Yanlış cevapta anında açıklama</p>
+          <p className="text-sm text-slate-500">
+            Instant feedback for every incorrect answer.
+          </p>
         </div>
         <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-wide text-primary">
           {question.skillFocus}
@@ -55,7 +57,7 @@ export const QuizPreview = ({ question }: QuizPreviewProps) => {
               </div>
               {isCorrect ? (
                 <span className="rounded-full bg-green-500/10 px-3 py-1 text-xs font-semibold text-green-600">
-                  Doğru
+                  Correct
                 </span>
               ) : null}
             </label>
@@ -68,8 +70,8 @@ export const QuizPreview = ({ question }: QuizPreviewProps) => {
             <div className="space-y-1">
               <p className="font-semibold text-slate-800">
                 {selectedChoice.correct
-                  ? "Harika! Doğru yanıt."
-                  : "Bu seçenek neden yanlış?"}
+                  ? "Nice! That's the correct answer."
+                  : "Why is this option incorrect?"}
               </p>
               <p>
                 <span className="font-medium">TR:</span>{" "}
@@ -82,25 +84,24 @@ export const QuizPreview = ({ question }: QuizPreviewProps) => {
             </div>
             <div className="rounded-2xl bg-white px-4 py-3 text-sm text-slate-500 shadow-inner">
               <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                Örnek Kullanım
+                Example Usage
               </p>
               <p className="text-slate-700">{selectedChoice.example}</p>
             </div>
           </div>
         ) : (
           <p className="text-slate-600">
-            Bir seçenek seçtiğinizde hem doğru cevabın gerekçesini hem de diğer
-            seçeneklerin neden hatalı olduğunu Türkçe ve İngilizce açıdan
-            göreceksiniz.
+            Select an option to see why the correct answer works and what makes
+            the distractors wrong in both Turkish and English explanations.
           </p>
         )}
       </div>
       <div className="flex flex-wrap gap-3">
         <button className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-dark">
-          Quiz&apos;e Başla
+          Start Quiz
         </button>
         <button className="rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-600 transition hover:border-primary/40 hover:text-primary">
-          Detaylı Rapor
+          Detailed Report
         </button>
       </div>
     </section>

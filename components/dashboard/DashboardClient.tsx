@@ -31,7 +31,7 @@ export const DashboardClient = () => {
         }
       } catch (error) {
         console.warn(
-          "[DashboardClient] Veri alınırken hata oluştu. Mock verilerle devam ediliyor.",
+          "[DashboardClient] Failed to retrieve data. Continuing with mock payload.",
           error
         );
         if (isMounted) {
@@ -49,7 +49,7 @@ export const DashboardClient = () => {
 
   useEffect(() => {
     initAnalytics().catch((error) => {
-      console.warn("[DashboardClient] Firebase Analytics başlatılamadı.", error);
+      console.warn("[DashboardClient] Unable to start Firebase Analytics.", error);
     });
   }, []);
 
@@ -67,27 +67,27 @@ export const DashboardClient = () => {
         <ActivityFeed activities={data.activities} />
         {status === "loading" ? (
           <p className="rounded-2xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm text-primary">
-            Gerçek zamanlı veriler yükleniyor...
+            Loading live data...
           </p>
         ) : null}
         {status === "error" ? (
           <p className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-700">
-            Firebase verilerine erişilemedi. Şu an örnek veriler gösteriliyor.
+            Firebase data is unavailable. Showing sample content instead.
           </p>
         ) : null}
       </main>
       <footer className="border-t border-slate-200 bg-white/80 py-6">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
-          <span>© {new Date().getFullYear()} RusLearn. Tüm hakları saklıdır.</span>
+          <span>© {new Date().getFullYear()} RusLearn. All rights reserved.</span>
           <div className="flex items-center gap-4">
             <a href="#" className="hover:text-primary">
-              Gizlilik Politikası
+              Privacy Policy
             </a>
             <a href="#" className="hover:text-primary">
-              Kullanım Şartları
+              Terms of Use
             </a>
             <a href="#" className="hover:text-primary">
-              Destek
+              Support
             </a>
           </div>
         </div>

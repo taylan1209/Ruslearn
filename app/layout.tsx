@@ -10,7 +10,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "RusLearn",
   description:
-    "Rusça cümle ve kelimeleri oyunlaştırılmış modlarla öğrenmek için kişiselleştirilmiş platform."
+    "Personalized platform for learning Russian sentences and vocabulary through playful learning modes."
 };
 
 export default function RootLayout({

@@ -15,9 +15,9 @@ export const ActivityFeed = ({ activities }: ActivityFeedProps) => {
   return (
     <section className="glass-panel flex flex-col gap-4 p-6">
       <div>
-        <h2 className="text-lg font-semibold text-slate-800">Son Aktiviteler</h2>
+        <h2 className="text-lg font-semibold text-slate-800">Recent Activity</h2>
         <p className="text-sm text-slate-500">
-          Günlük ilerlemenize göre otomatik XP kazanın.
+          Earn XP automatically as you move through your daily goals.
         </p>
       </div>
       <ul className="space-y-3">

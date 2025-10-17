@@ -25,9 +25,7 @@ const firebaseConfig = {
 export const getFirebaseApp = (): FirebaseApp => {
   if (!firebaseApp) {
     if (!firebaseConfig.projectId) {
-      throw new Error(
-        "Firebase yapılandırması eksik. Ortam değişkenlerini kontrol edin."
-      );
+      throw new Error("Missing Firebase configuration. Check environment variables.");
     }
 
     firebaseApp = getApps().length
@@ -69,12 +67,12 @@ export const fetchDashboardSnapshot = async (): Promise<DashboardData> => {
     flashcard:
       flashcard ??
       (() => {
-        throw new Error("Flashcard koleksiyonunda veri bulunamadı.");
+        throw new Error("No flashcard documents found in Firestore.");
       })(),
     quizQuestion:
       quizQuestion ??
       (() => {
-        throw new Error("Quiz koleksiyonunda veri bulunamadı.");
+        throw new Error("No quiz documents found in Firestore.");
       })(),
     activities: activitySnapshot.docs.map(
       (doc) =>
